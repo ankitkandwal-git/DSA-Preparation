@@ -58,7 +58,6 @@ int main(){
        cin>>arr[i];
    }
    Node* head = arrayToLL(arr.data(),n);
-   cout<<"Original LL: ";
    printLL(head);
    head = reverseLL(head);
    cout<<"Reverse LL: ";
