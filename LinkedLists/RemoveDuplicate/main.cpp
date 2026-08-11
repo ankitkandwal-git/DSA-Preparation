@@ -41,7 +41,7 @@ Node* removeDuplicates(Node* head){
     Node* temp = head;
     Node* temp1 = temp;
     Node* temp2 = temp->next;
-    while(temp1!=NULL){
+    while(temp1!=NULL && temp2!=NULL){
         if(temp1->data == temp2->data){
             temp1->next = temp2->next;
             temp2 = temp2->next;
