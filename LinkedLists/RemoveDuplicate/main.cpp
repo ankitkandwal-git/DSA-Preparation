@@ -18,6 +18,7 @@ public: // Error 1: Make members public for direct access
 };
 
 Node* arrayToLL(int arr[],int n){
+    if(n<=0) return NULL;
     Node* head = new Node(arr[0]);
     Node* temp = head;
     for(int i=1;i<n;i++){
@@ -38,19 +39,19 @@ void printLL(Node* head){
 };
 
 Node* removeDuplicates(Node* head){
+    if(head==NULL) return NULL;
     Node* temp = head;
-    Node* temp1 = temp;
-    Node* temp2 = temp->next;
-    while(temp1!=NULL && temp2!=NULL){
-        if(temp1->data == temp2->data){
-            temp1->next = temp2->next;
-            temp2 = temp2->next;
+    while(temp!=NULL && temp->next!=NULL){
+        if(temp->data == temp->next->data){
+            Node* delNode = temp->next;
+            temp->next = temp->next->next;
+            delete delNode;
         }
         else{
-            temp1 = temp1->next;
+            temp = temp->next;
         }
     }
-    return temp;
+    return head;
 }
 
 int main(){
