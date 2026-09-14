@@ -5,6 +5,13 @@
       "type": "java",
       "name": "Main",
       "request": "launch",
+      "mainClass": "LinkedLists.ReverseLL.Main",
+      "projectName": "DSA Preperation_49b693d0"
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
       "mainClass": "LinkedLists.CycleDetection.Main",
       "projectName": "DSA Preperation_49b693d0"
     },
