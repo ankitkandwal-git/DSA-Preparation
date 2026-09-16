@@ -1,45 +1,71 @@
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "type": "java",
-      "name": "Main",
-      "request": "launch",
-      "mainClass": "LinkedLists.MiddleOfLinkedList.Main",
-      "projectName": "DSA Preperation_49b693d0"
-    },
-    {
-      "type": "java",
-      "name": "Main",
-      "request": "launch",
-      "mainClass": "LinkedLists.ReverseLL.Main",
-      "projectName": "DSA Preperation_49b693d0"
-    },
-    {
-      "type": "java",
-      "name": "Main",
-      "request": "launch",
-      "mainClass": "LinkedLists.CycleDetection.Main",
-      "projectName": "DSA Preperation_49b693d0"
-    },
-    {
-      "name": "C/C++ Runner: Debug Session",
-      "type": "cppdbg",
-      "request": "launch",
-      "args": [],
-      "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "c:/Users/lenovo/DSA Preperation/LinkedLists/CycleDetection",
-      "program": "c:/Users/lenovo/DSA Preperation/LinkedLists/CycleDetection/build/Debug/outDebug",
-      "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
-      "setupCommands": [
+    "version": "0.2.0",
+    "configurations": [
         {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "LinkedLists.MiddleOfLinkedList.Main",
+            "projectName": "DSA Preperation_49b693d0"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "LinkedLists.ReverseLL.Main",
+            "projectName": "DSA Preperation_49b693d0"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "LinkedLists.CycleDetection.Main",
+            "projectName": "DSA Preperation_49b693d0"
+        },
+        {
+            "name": "C/C++ Runner: Debug Session",
+            "type": "cppdbg",
+            "request": "launch",
+            "args": [],
+            "stopAtEntry": false,
+            "externalConsole": true,
+            "cwd": "c:/Users/lenovo/DSA Preperation/LinkedLists/CycleDetection",
+            "program": "c:/Users/lenovo/DSA Preperation/LinkedLists/CycleDetection/build/Debug/outDebug",
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "C/C++: g++.exe build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++.exe build active file"
         }
-      ]
-    }
-  ]
+    ]
 }
