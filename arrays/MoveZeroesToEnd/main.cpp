@@ -2,10 +2,12 @@
 using namespace std;
 
 void moveZeroesToEnd(int n,int arr[]){
+    int j=0;
     for(int i=0;i<n;i++){
         if(arr[i]!=0){
-            swap(arr[i],arr[i+1]);
-        }
+            swap(arr[i],arr[j]);
+            j++;
+        }     
     }
 }
 int main(){
