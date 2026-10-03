@@ -4,8 +4,8 @@ using namespace std;
 int largestNumber(int n, int arr[]){
     int maxi=arr[0];
     for(int i=1;i<n;i++){
-        if(i>maxi){
-            maxi = i;
+        if(arr[i]>maxi){
+            maxi = arr[i];
         }
     }
     return maxi;
