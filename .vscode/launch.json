@@ -5,6 +5,13 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
+            "mainClass": "arrays.MaximunConsecutiveOnes.Main",
+            "projectName": "DSA Preperation_49b693d0"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
             "mainClass": "arrays.UnionTwoSortArray.Main",
             "projectName": "DSA Preperation_49b693d0"
         },
