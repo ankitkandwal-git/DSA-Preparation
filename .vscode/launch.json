@@ -5,6 +5,20 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
+            "mainClass": "arrays.TwoSum2.Main",
+            "projectName": "DSA Preperation_49b693d0"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "DSA Preperation_49b693d0"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
             "mainClass": "arrays.MissingElement.Main",
             "projectName": "DSA Preperation_49b693d0"
         },
