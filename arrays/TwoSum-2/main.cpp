@@ -1,3 +1,6 @@
+// Given a array arr and N integer starting from 1 sorted to non decreasing order
+// and an integer target, find two distinct indices i and j such that
+// 1<=i<j<=arr.size() and arr[i]+arr[j]==target. Return the indices of the two numbers in a vector.
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -8,7 +11,7 @@ vector<int>twoSum(vector<int>arr, int target){
     int j=n-1;
     while(i<j){
         int sum = arr[i]+arr[j];
-        if(sum==target) return {i,j};
+        if(sum==target) return {i+1,j+1};
         else if(sum>target) j--;
         else i++;
     }
