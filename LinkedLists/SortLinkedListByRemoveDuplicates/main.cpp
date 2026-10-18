@@ -32,19 +32,30 @@ void printLL(Node* head){
 }
 
 Node* removeDuplicates(Node* head){
-    if(head == nullptr) return nullptr;
-    Node* temp = head;
-    while(temp->next!=NULL){
-        if(temp->data==temp->next->data){
-            Node* duplicate = temp->next;
-            temp->next = temp->next->next;
-            delete duplicate;
+    if(head==NULL) return head;
+    if(head->next!=NULL && head!=NULL) return head;
+    Node* curr = head;
+    Node* prev = head;
+    Node* dummy = new Node(0);
+    dummy->next = head;
+    while(curr!=NULL){
+        if(curr->next!=NULL && curr->data == curr->next->data){
+            int duplicateValue = curr->data;
+            while(curr!=NULL && curr->data==duplicateValue){
+                Node* temp = curr;
+                curr = curr->next;
+                delete temp;
+            }
+            prev->next = curr;
         }
         else{
-            temp = temp->next;
+            prev = curr;
+            curr = curr->next;
         }
     }
-    return head;
+    Node* newHead = dummy->next;
+    delete dummy;
+    return newHead;
 }
 
 int main(){
@@ -52,7 +63,7 @@ int main(){
     cout<<"Enter the number of elements in the linked list: ";
     cin>>n;
     vector<int> arr(n);
-    cout<<"Enter the elements: ";
+    cout<<"Enter the elements of the linked list: ";
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
