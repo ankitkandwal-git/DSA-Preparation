@@ -1,4 +1,4 @@
-package strings.RemoveOuterMostParenthesis;
+package Strings.RemoveOuterMostParenthesis;
 import java.util.*;
 
 class Main{
