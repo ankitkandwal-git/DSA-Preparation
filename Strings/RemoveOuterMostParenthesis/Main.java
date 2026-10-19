@@ -17,8 +17,9 @@ class Main{
         return ans;
     }
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        String s = sc.next();
-        System.out.println(removeOuterParentheses(s));
+        try(Scanner sc = new Scanner(System.in)){
+            String s = sc.next();
+            System.out.println(removeOuterParentheses(s));
+        }
     }
 }
