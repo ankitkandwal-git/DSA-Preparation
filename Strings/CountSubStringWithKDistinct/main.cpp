@@ -13,7 +13,7 @@ long long f(string s, int k){
             ans+=n-j;
             arr[s[i]-'a']--;
             if(arr[s[i]-'a']==0) count--;
-            i++;
+            i++; 
         }
         j++;
     }
