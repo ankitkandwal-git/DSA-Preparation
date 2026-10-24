@@ -3,12 +3,12 @@ import java.util.*;
 
 class Main{
     static int maxShareProfit(int arr[], int n){
-        int profit = 0;
         int minimum=arr[0];
         int maxProfit=0;
         for(int i=1;i<n;i++){
-            profit=arr[i]-minimum;
-            maxProfit=Math.max(maxProfit,arr[i]);
+            int profit=arr[i]-minimum;
+            maxProfit=Math.max(maxProfit,profit);
+            minimum=Math.min(minimum,arr[i]);
         }
         return maxProfit;
     }
