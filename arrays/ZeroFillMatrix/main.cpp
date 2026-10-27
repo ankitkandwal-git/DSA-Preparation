@@ -53,6 +53,8 @@ int main(){
             cin>>matrix[i][j];
         }
     }
+    
+    cout<<"The matrix after zero fill is: "<<endl;
     for(int i=0;i<m;i++){
         for(int j=0;j<n;j++){
             cout<<matrix[i][j]<<" ";
@@ -60,5 +62,4 @@ int main(){
         cout<<endl;
     }
     zeroFill(matrix);
-    cout<<"The matrix after zero fill is: "<<endl;
 }
