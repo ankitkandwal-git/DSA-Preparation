@@ -39,4 +39,26 @@ void zeroFill(vector<vector<int>>&matrix){
         }
     }
 }
-int main()
+int main(){
+    int m;
+    cout<<"Enter the number of rows: ";
+    cin>>m;
+    int n;
+    cout<<"Enter the number of columns: ";
+    cin>>n;
+    vector<vector<int>>matrix(m,vector<int>(n));
+    cout<<"Enter the elements of the matrix: ";
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            cin>>matrix[i][j];
+        }
+    }
+    for(int i=0;i<m;i++){
+        for(int j=0;j<n;j++){
+            cout<<matrix[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    zeroFill(matrix);
+    cout<<"The matrix after zero fill is: "<<endl;
+}
