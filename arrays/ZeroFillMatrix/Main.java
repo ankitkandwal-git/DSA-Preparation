@@ -27,6 +27,16 @@ public class Main {
                 }
             }
         }
+        if(firstRow==0){
+            for(int j=0;j<n;j++){
+                matrix[0][j]=0;
+            }
+        }
+        if(firstCol==0){
+            for(int i=0;i<m;i++){
+                matrix[i][0]=0;
+            }
+        }
     }
     public static void main(String[]args){
         try(Scanner sc = new Scanner(System.in)){
