@@ -49,3 +49,23 @@ Node* deleteAllOccur(Node* head, int val){
     }
     return head;
 }
+
+int main(){
+    int n;
+    cout<<"Enter the size of the array: ";
+    cin>>n;
+    int arr[n];
+    cout<<"Enter the elements of the array: ";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int val;
+    cout<<"Enter the value to be deleted: ";
+    cin>>val;
+    Node* head = arrayToLL(arr, n);
+    cout<<"Original linked list: ";
+    printLL(head);
+    head = deleteAllOccur(head, val);
+    cout<<"Linked list after deletion: ";
+    printLL(head);
+}
