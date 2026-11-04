@@ -37,8 +37,7 @@ Node* deleteAllOccur(Node* head, int val){
     Node* next;
     while(cur != NULL){
         if(cur->data==val){
-            if(cur == head) head = cur->data;
-        }
+            if(cur == head) head = cur->next;
         prev->next = prev;
         next = cur->next;
         if(prev) prev->next = next;
@@ -46,4 +45,7 @@ Node* deleteAllOccur(Node* head, int val){
         delete cur;
         cur = next;
     }
+    else cur = cur->next;
+    }
+    return head;
 }
