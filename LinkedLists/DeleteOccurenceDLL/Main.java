@@ -39,14 +39,27 @@ class Main{
         while(cur!=null){
             if(cur.data==x){
                 if(cur==head) head = cur.next;
-                prev.next = newHead;
-                next = cur.next;
-                if(prev!=null) prev.next = next;
-                if(next!=null) next.prev = prev;
+                newHead = cur.next;
+                if(prev!=null) prev.next = newHead;
+                if(newHead!=null) newHead.prev = prev;
             }
             prev = cur;
             cur = cur.next;
         }
         return head;
+    }
+    public static void main(String[]args){
+        try(Scanner sc = new Scanner(System.in)){
+            int n = sc.nextInt();
+            int arr[] = new int[n];
+            for(int i=0;i<n;i++){
+                arr[i] = sc.nextInt();
+            }
+            Node head = arrayToLL(arr, n);
+            printLL(head);
+            int x = sc.nextInt();
+            head = deleteOccurence(head, x);
+            printLL(head);
+        }
     }
 }
