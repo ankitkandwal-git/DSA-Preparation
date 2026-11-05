@@ -36,6 +36,17 @@ class Main{
         Node cur = head;
         Node prev = null;
         Node newHead;
-
+        while(cur!=null){
+            if(cur.data==x){
+                if(cur==head) head = cur.next;
+                prev.next = newHead;
+                next = cur.next;
+                if(prev!=null) prev.next = next;
+                if(next!=null) next.prev = prev;
+            }
+            prev = cur;
+            cur = cur.next;
+        }
+        return head;
     }
 }
