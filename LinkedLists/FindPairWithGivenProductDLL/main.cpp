@@ -35,7 +35,7 @@ void printLL(Node* head){
 Node* productPair(Node* head,int k){
     Node* left = head;
     Node* right = head;
-    vector<pair<int<int<int,int>>ans;
+    vector<pair<int,pair<int,int>>>ans;
     int count=0;
     while(right->next){
         right = right->next;
@@ -43,7 +43,7 @@ Node* productPair(Node* head,int k){
     while(left->data < right->data){
         int x = left->data * right->data;
         if(x==k){
-            ans.push_back({left->data,right->data});
+            ans.push_back({left->data,right->data},count++);
         }
         else if(x>k){
             right = right->prev;
