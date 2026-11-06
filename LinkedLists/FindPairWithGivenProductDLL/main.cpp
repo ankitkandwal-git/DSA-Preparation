@@ -32,10 +32,10 @@ void printLL(Node* head){
     }
 }
 
-vector<pair<int,int>> productPair(Node* head,int k){
+    int productPair(Node* head,int k){
     Node* left = head;
     Node* right = head;
-    vector<pair<int,pair<int,int>>>ans;
+    vector<pair<int,int>>ans;
     int count=0;
     while(right->next){
         right = right->next;
@@ -54,4 +54,22 @@ vector<pair<int,int>> productPair(Node* head,int k){
         else left = left->next;
     }
     return count;
+}
+
+int main(){
+    int n;
+    cout<<"Enter the size of array: ";
+    cin>>n;
+    int arr[n];
+    cout<<"Enter the elements in array: ";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    Node* head = arrayToLL(arr, n);
+    int k;
+    cout<<"Enter the k elements: ";
+    cin>>k;
+    int count = productPair(head, k);
+    cout<<"Number of pairs with product "<<k<<" : "<<count<<endl;
+    return 0;
 }
