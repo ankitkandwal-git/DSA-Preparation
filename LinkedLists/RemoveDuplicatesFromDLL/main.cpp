@@ -42,7 +42,7 @@ Node* removeDuplicates(Node* head){
     while(cur!=NULL && cur->next!=NULL){
         prev = cur->prev;
         next = cur->next;
-        if(cur->data==prev->data){
+        if(cur->data==cur->next->data){
             prev->next = next;
             if(next) next->prev = prev;
             delete cur;
@@ -56,12 +56,13 @@ int main(){
     int n;
     cout<<"Enter the size of array: ";
     cin>>n;
-    int arr[n];
+    if(n<0) return 1;
+    vector<int> arr(n);
     cout<<"Enter the elements in array: ";
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
-    Node* head = arrayToLL(arr,n);
+    Node* head = n==0 ? NULL : arrayToLL(arr.data(),n);
     head = removeDuplicates(head);
     cout<<"\nThe linked list after removing duplicates is: ";
     printLL(head);
