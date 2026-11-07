@@ -41,7 +41,7 @@ Node* removeDuplicates(Node* head){
         if(cur->data==cur->next->data){
             Node* toDelete = cur->next;
             cur->next = toDelete->next;
-            if(toDelete!=NULL){
+            if(toDelete->next!=NULL){
                 toDelete->next->prev = cur;
             }
             delete toDelete;
