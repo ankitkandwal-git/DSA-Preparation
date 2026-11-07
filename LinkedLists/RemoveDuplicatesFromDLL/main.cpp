@@ -36,16 +36,13 @@ void printLL(Node* head){
 
 Node* removeDuplicates(Node* head){
     if(head==NULL) return NULL;
-    Node* prev = NULL;
     Node* cur = head;
-    Node* next;
-    while(cur!=NULL && cur->next!=NULL){
-        prev = cur->prev;
-        next = cur->next;
+    while(cur!=NULL && cur->next!=NULL){;
         if(cur->data==cur->next->data){
-            prev->next = next;
-            if(next) next->prev = prev;
-            delete cur;
+            Node* toDelete = cur->next;
+            cur->next = toDelete->next;
+            toDelete->next->prev = cur;
+            delete toDelete;
         }
         cur = cur->next;
     }
