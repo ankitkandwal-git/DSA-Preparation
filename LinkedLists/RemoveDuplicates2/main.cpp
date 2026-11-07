@@ -41,7 +41,7 @@ Node* removeDuplicates(Node* head){
             }
             prev->next = head->next;
         }
-        else head = head->next;
+        else prev = prev->next;
         head = head->next;
     }
     return dummy->next;
