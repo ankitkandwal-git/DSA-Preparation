@@ -41,10 +41,12 @@ Node* removeDuplicates(Node* head){
         if(cur->data==cur->next->data){
             Node* toDelete = cur->next;
             cur->next = toDelete->next;
-            toDelete->next->prev = cur;
+            if(toDelete!=NULL){
+                toDelete->next->prev = cur;
+            }
             delete toDelete;
         }
-        cur = cur->next;
+        else cur = cur->next;
     }
     return head;
 }
