@@ -76,3 +76,21 @@ Node* reverseKGroup(Node* head,int k){
     }
     return head;
 }
+
+int main(){
+    int n;
+    cout<<"Enter the size of LL: ";
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<"Enter the elements in LL: ";
+    int k;
+    cout<<"Enter the value of k: ";
+    cin>>k;
+    Node* head = arrayToLL(arr,n);
+    head = reverseKGroup(head,k);
+    printLL(head);
+    return 0;
+}
