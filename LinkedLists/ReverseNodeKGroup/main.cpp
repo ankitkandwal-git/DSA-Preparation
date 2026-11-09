@@ -51,3 +51,28 @@ Node* reverse(Node* head){
     }
     return prev;
 }
+
+Node* reverseKGroup(Node* head,int k){
+    Node* cur = head;
+    Node* prev = NULL;
+    Node* next;
+    while(cur){
+        Node* kth = gthNode(cur,k);
+        if(kth){
+            Node* next = kth->next;
+            kth->next = NULL;
+            reverse(cur);
+            if(cur==head) head=kth;
+            else prev->next = kth;
+        }
+        else{
+            if(prev){
+                prev->next = cur;
+                break;
+            }
+            prev=cur;
+            cur=next;
+        }
+    }
+    return head;
+}
