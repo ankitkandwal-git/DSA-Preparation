@@ -26,4 +26,24 @@ void printLL(Node* head){
         cout<<head->data<<" ";
         head = head->next;
     }
+} 
+
+Node* mergeLL(Node* head1,Node* head2){
+    Node* dummy = new Node(0);
+    Node* prev = dummy;
+    while(head1!=NULL && head2!=NULL){
+        if(head1->data <= head2->data){
+            prev->next = head1;
+            prev = prev->next;
+            head1 = head1->next;
+        }
+        else{
+            prev = head2->next;
+            prev = prev->next;
+            head2 = head2->next;
+        }
+    }
+    if(head1!=NULL) prev->next = head1;
+    else prev->next = head2;
+    return dummy.next;
 }
