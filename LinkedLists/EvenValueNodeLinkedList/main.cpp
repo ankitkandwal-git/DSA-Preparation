@@ -36,6 +36,7 @@ int evenNodeSum(Node* head){
         sum+=slow->data;
         slow = slow->next->next;
     }
+    temp = temp->next;
     return sum;
 }
 
