@@ -31,6 +31,6 @@ void printLL(Node* head){
     cout << endl;
 }
 
-Node* mergeKSortedLL(vector<Node*>&arr[],int m,int n){
+Node* mergeKSortedLL(vector<Node*>&arr[],int k){
     
 }
