@@ -35,7 +35,7 @@ int evenNodeSum(Node* head){
         if(temp->data%2==0){
             sum+=temp->data; 
         }
-        else temp = temp->next;
+        temp = temp->next;
     }
     return sum;
 }
