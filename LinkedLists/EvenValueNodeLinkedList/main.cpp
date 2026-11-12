@@ -29,14 +29,16 @@ void printLL(Node* head){
 }
 
 int evenNodeSum(Node* head){
-    Node* temp = head;
-    Node* slow = temp->next;
-    int sum=0;
-    while(temp!=NULL && temp->next!=NULL){
-        sum+=slow->data;
-        slow = slow->next->next;
+    if(head==NULL || head->next==NULL) return 0;
+    Node* temp = head->next;
+    int sum =0;
+    while(temp!=NULL){
+        sum+=temp->data;
+        if(temp->next!=NULL){
+            temp = temp->next->next;
+        }
+        else break;
     }
-    temp = temp->next;
     return sum;
 }
 
