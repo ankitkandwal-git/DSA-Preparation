@@ -41,7 +41,7 @@ int evenNodeSum(Node* head){
 
 int main(){
     int n;
-    cout<<'Enter the size of LL: ';
+    cout<<"Enter the size of LL: ";
     cin>>n;
     int arr[n];
     cout<<"Enter the elements in LL: ";
