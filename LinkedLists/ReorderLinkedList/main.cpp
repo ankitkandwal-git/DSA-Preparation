@@ -28,9 +28,48 @@ void printLL(Node* head){
     }
 }
 
+Node* middleLL(Node* head){
+    Node* slow = head;
+    Node* fast = head;
+    while(fast->next!=NULL && fast->next->next!=NULL){
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow;
+}
+
+Node* reverse(Node* head){
+    Node* prev=NULL;
+    Node* curr = head;
+    Node* next=NULL;
+    while(curr!=NULL){
+        next = curr->next;
+        prev = curr;
+        curr = next;  
+    }
+    return prev;
+}
+
 void reorderLL(Node* head){
-    Node* left = head;
-    Node* right = head;
-    while(right->next!=NULL) right = right->next;
-    while(left<=right)
+    if(!head || !head->next) return;
+    Node* mid = middleLL(head);
+    Node* second = mid->next;
+    mid->next = NULL;
+    second = reverse(second);
+}
+
+int main(){
+    int n;
+    cout<<"Enter the number of elements in the linked list: ";
+    cin>>n;
+    int arr[n];
+    cout<<"Enter the elements of the linked list: ";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    Node* head = arrayToLL(arr, n);
+    printLL(head);
+    reorderLL(head);
+    printLL(head);
+    return 0;
 }
