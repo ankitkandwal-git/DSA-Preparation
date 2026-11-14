@@ -27,3 +27,10 @@ void printLL(Node* head){
         head = head->next;
     }
 }
+
+void reorderLL(Node* head){
+    Node* left = head;
+    Node* right = head;
+    while(right->next!=NULL) right = right->next;
+    while(left<=right)
+}
