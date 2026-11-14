@@ -55,6 +55,7 @@ void reorderLL(Node* head){
     if(!head || !head->next) return;
     Node* mid = middleLL(head);
     Node* second = mid->next;
+    mid->next = NULL;
     second = reverse(second);
     Node* first = head;
     while(second!=NULL){
