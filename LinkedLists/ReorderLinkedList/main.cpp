@@ -78,7 +78,7 @@ int main(){
         cin>>arr[i];
     }
     Node* head = arrayToLL(arr, n);
-    printLL(head);
+    // printLL(head);
     reorderLL(head);
     printLL(head);
     return 0;
