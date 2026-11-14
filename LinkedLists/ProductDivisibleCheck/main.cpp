@@ -30,9 +30,10 @@ void printLL(Node* head){
 
 long long ProductDivisible(Node* head,int k){
     Node* temp = head;
-    int sum = 1;
+    long long sum = 1;
+    if(k==0) return 0;
     while(temp!=NULL){
-        if(temp->data%4==0){
+        if(temp->data%k==0){
             sum*=temp->data;
         }
         temp = temp->next;
@@ -48,7 +49,7 @@ int main(){
     for(int i=0;i<n;i++) cin>>arr[i];
     int k;
     cout<<"Enter the k number: ";
-    cin>>n;
+    cin>>k;
     Node* head = arrayToLL(arr,n);
     ProductDivisible(head,k);
     printLL(head);
