@@ -22,9 +22,18 @@ class Main{
         return head;
     }
     public static void printLL(Node head){
-        while(head!=NULL){
+        while(head!=null){
             System.out.print(head.data);
             head = head.next;
         }
+    }
+    public static Node reverse(Node head){
+        Node slow = head;
+        Node fast = head;
+        while(fast.next!=null && fast.next.next!=null){
+            slow =slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
     }
 }
