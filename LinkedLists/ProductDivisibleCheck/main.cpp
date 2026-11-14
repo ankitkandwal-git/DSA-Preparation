@@ -11,10 +11,11 @@ class Node{
     }
 };
 
-Node* arrayToLL(int arr[],int n){
+Node* arrayToLL(const vector<int>& arr){
+    if(arr.empty()) return NULL;
     Node* head = new Node(arr[0]);
     Node* temp = head;
-    for(int i=1;i<n;i++){
+    for(int i=1;i<(int)arr.size();i++){
         temp->next = new Node(arr[i]);
         temp = temp->next;
     }
@@ -30,27 +31,28 @@ void printLL(Node* head){
 
 long long ProductDivisible(Node* head,int k){
     Node* temp = head;
-    long long sum = 1;
+    long long product = 1;
     if(k==0) return 0;
     while(temp!=NULL){
         if(temp->data%k==0){
-            sum*=temp->data;
+            product *= temp->data;
         }
         temp = temp->next;
     }
-    return sum;
+    return product;
 }
 int main(){
     int n;
     cout<<"Enter the size of LL: ";
     cin>>n;
-    int arr[n];
+    vector<int> arr(n);
     cout<<"Enter the elements in LL: ";
     for(int i=0;i<n;i++) cin>>arr[i];
     int k;
     cout<<"Enter the k number: ";
     cin>>k;
-    Node* head = arrayToLL(arr,n);
-    ProductDivisible(head,k);
+    Node* head = arrayToLL(arr);
+    long long result = ProductDivisible(head,k);
+    cout << "Product of nodes divisible by k: " << result << endl;
     printLL(head);
 }
