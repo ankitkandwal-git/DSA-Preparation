@@ -44,6 +44,7 @@ Node* reverse(Node* head){
     Node* next=NULL;
     while(curr!=NULL){
         next = curr->next;
+        curr->next = prev;
         prev = curr;
         curr = next;  
     }
@@ -54,8 +55,16 @@ void reorderLL(Node* head){
     if(!head || !head->next) return;
     Node* mid = middleLL(head);
     Node* second = mid->next;
-    mid->next = NULL;
     second = reverse(second);
+    Node* first = head;
+    while(second!=NULL){
+        Node* temp1 = first->next;
+        Node* temp2 = second->next;
+        first->next = second;
+        second->next = temp1;
+        first = temp1;
+        second = temp2;
+    }
 }
 
 int main(){
