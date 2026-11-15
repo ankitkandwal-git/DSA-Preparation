@@ -12,10 +12,12 @@ class Node{
 };
 
 Node* arrayToLL(int arr[],int n){
+    if(n==0) return NULL;
     Node* head = new Node(arr[0]);
+    Node* temp = head;
     for(int i=1;i<n;i++){
-        head->next = new Node(arr[i]);
-        head = head->next;
+        temp->next = new Node(arr[i]);
+        temp = temp->next;
     }
     return head;
 }
@@ -27,9 +29,34 @@ void printLL(Node* head){
     }
 }
 
-Node* findRight(Node* head){
-    Node* temp = head;
-    while(temp!=NULL &&temp->next!=NULL){
-        if(temp->data<temp->next->data)
+Node* reverseLL(Node* head){
+    Node* curr = head;
+    Node* prev = NULL;
+    while(curr!=NULL){
+        Node* next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
     }
+    return prev;
+}
+
+Node* removeNode(Node* head){
+    if(head==NULL || head->next==NULL) return head;
+
+    head = reverseLL(head);
+    Node* curr = head;
+    int maxValue = curr->data;
+    while(curr->next!=NULL){
+        if(curr->next->data<maxValue){
+            Node* toDelete = curr->next;
+            curr->next = toDelete->next;
+            delete toDelete;
+        }
+        else{
+            curr = curr->next;
+            maxValue = curr->data;
+        }
+    }
+    return reverseLL(head);
 }
