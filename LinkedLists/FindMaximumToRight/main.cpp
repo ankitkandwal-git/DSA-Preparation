@@ -42,20 +42,17 @@ Node* reverseLL(Node* head){
 }
 
 Node* removeNode(Node* head){
-    if(head==NULL || head->next==NULL) return head;
-
-    head = reverseLL(head);
-    Node* curr = head;
-    int maxValue = curr->data;
-    while(curr->next!=NULL){
-        if(curr->next->data<maxValue){
-            Node* toDelete = curr->next;
-            curr->next = toDelete->next;
-            delete toDelete;
+    if(!head || !head->next) return head;
+    reverseLL(head);
+    Node* temp = head;
+    int maxNum = temp->data;
+    while(temp!=NULL && temp->next!=NULL){
+        if(temp->next->data < maxNum){
+            temp->next = temp->next->next;
         }
         else{
-            curr = curr->next;
-            maxValue = curr->data;
+            temp = temp->next;
+            maxNum = temp->data;
         }
     }
     return reverseLL(head);
