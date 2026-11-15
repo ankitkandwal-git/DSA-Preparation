@@ -57,3 +57,16 @@ Node* removeNode(Node* head){
     }
     return reverseLL(head);
 }
+
+int main(){
+    int n;
+    cout<<"Enter the size of LL: ";
+    cin>>n;
+    int arr[n];
+    cout<<"Enter the elements in LL: ";
+    for(int i=0;i<n;i++)cin>>arr[i];
+    Node* head = arrayToLL(arr,n);
+    head = removeNode(head);
+    printLL(head);
+    return 0;
+}
