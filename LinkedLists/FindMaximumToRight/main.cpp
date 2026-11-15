@@ -43,7 +43,7 @@ Node* reverseLL(Node* head){
 
 Node* removeNode(Node* head){
     if(!head || !head->next) return head;
-    reverseLL(head);
+    head=reverseLL(head);
     Node* temp = head;
     int maxNum = temp->data;
     while(temp!=NULL && temp->next!=NULL){
