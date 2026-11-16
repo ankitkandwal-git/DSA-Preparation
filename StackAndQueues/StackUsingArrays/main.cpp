@@ -40,4 +40,12 @@ class Stack{
         return top == capacity-1;
     }
 };
-
+int main(){
+    int n;
+    cin>>n;
+    Stack s(n);
+    cout<<"Stack is empty: "<<s.empty()<<endl;
+    cout<<"Stack size: "<<s.size()<<endl;
+    cout<<"Stack is full: "<<s.isFull()<<endl;
+    cout<<"Pushing elements into stack: "<<endl;
+}
