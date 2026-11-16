@@ -20,4 +20,13 @@ class Stack{
         newNode->next = top;
         top = newNode;
     }
-}
+
+    void pop(){
+        if(top==-1){
+            cout<<"Stack is empty"<<endl;
+        }
+        Node* temp = top;
+        top = top->next;
+        delete temp;
+    }
+};
