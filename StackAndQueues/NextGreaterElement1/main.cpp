@@ -3,7 +3,7 @@ using namespace std;
 
 vector<int>NGE(vector<int>&ans){
     int n = ans.size();
-    vector<int>result;
+    vector<int>result(n);
     stack<int>stk;
     for(int i=n-1;i>=0;i--){
         while(!stk.empty() && ans[i]>=stk.top()){
