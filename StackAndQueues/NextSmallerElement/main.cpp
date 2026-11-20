@@ -16,3 +16,16 @@ vector<int>NSE(vector<int>&arr){
     }
     return ans;
 }
+
+int main(){
+    int n;
+    cout<<"Enter the size of arr: ";
+    cin>>n;
+    vector<int>arr(n);
+    for(int i=0;i<n;i++) cin>>arr[i];
+    vector<int>ans = NSE(arr);
+    cout<<"Next Smaller Element: ";
+    for(int i=0;i<n;i++) cout<<ans[i]<<" ";
+    return 0;
+
+}
