@@ -33,3 +33,17 @@ int sumOfMin(vector<int>&arr){
     }
     return sum;
 }
+
+int main(){
+    int n;
+    cout<<"Enter the size of the array: ";
+    cin>>n;
+    vector<int>arr(n);
+    cout<<"Enter the elements of the array: ";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int result = sumOfMin(arr);
+    cout<<"The sum of minimum elements of all subarrays is: "<<result<<endl;
+    return 0;
+}
