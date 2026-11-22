@@ -3,6 +3,7 @@ using namespace std;
 
 int sumOfMin(vector<int>&arr){
     int n = arr.size();
+    int m = 1e9+7;
     stack<int>stk;
     vector<int>nse(n);
     for(int i=n-1;i>=0;i--){
@@ -32,7 +33,7 @@ int sumOfMin(vector<int>&arr){
     int sum=0;
     for(int i=0;i<n;i++){
         long long num = (nse[i]-1)*(i-pse[i]);
-        sum = (sum+num*arr[i])%n;
+        sum = (sum+num*arr[i])%m;
     }
     return sum;
 }
