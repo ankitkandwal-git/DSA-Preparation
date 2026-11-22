@@ -17,6 +17,9 @@ int sumOfMin(vector<int>&arr){
         stk.push(i);
     }
     vector<int>pse(n);
+    while(!stk.empty()){
+        stk.pop();
+    }
     for(int i=0;i<n;i++){
         while(!stk.empty() && arr[stk.top()]>arr[i]){
             stk.pop();
