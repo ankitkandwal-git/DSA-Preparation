@@ -8,3 +8,10 @@ void printDigit(int n){
         cout<<last_digit<<endl;
     }
 }
+int main(){
+    int n;
+    cout<<"enter the n number: ";
+    cin>>n;
+    cout<<printDigit<<endl;
+    return 0;
+}
