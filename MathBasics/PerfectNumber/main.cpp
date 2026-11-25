@@ -6,7 +6,7 @@ int divisor(int num){
     for(int i=2;i*i<num;i++){
         if(num%i==0){
             sum+=i;
-            if(i!=num/i) sum+=n/i;
+            if(i!=num/i) sum+=num/i;
         }
     }
     return sum;
@@ -20,7 +20,7 @@ int main(){
     int n;
     cout<<"enter the n :";
     cin>>n;
-    if(divisor) cout<<"Yes perfect Num";
+    if(perfectNumber(n)) cout<<"Yes perfect Num";
     else cout<<"No perfect Num";
     return 0;
 }
