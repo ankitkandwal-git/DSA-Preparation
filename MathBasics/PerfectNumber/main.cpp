@@ -4,10 +4,23 @@ using namespace std;
 int divisor(int num){
     int sum=1;
     for(int i=2;i*i<num;i++){
-        if(n%i==0){
+        if(num%i==0){
             sum+=i;
-            if(i!=n/i) sum+=n/i;
+            if(i!=num/i) sum+=n/i;
         }
     }
     return sum;
+}
+
+bool perfectNumber(int num){
+    if(num<=1) return false;
+    return divisor(num)==num;
+}
+int main(){
+    int n;
+    cout<<"enter the n :";
+    cin>>n;
+    if(divisor) cout<<"Yes perfect Num";
+    else cout<<"No perfect Num";
+    return 0;
 }
