@@ -8,10 +8,10 @@ void print_Sub(int i,int arr[],vector<int>&v,int n){
         return;
     }
     v.push_back(arr[i]);
-    print_Sub(i,arr,v,n);
+    print_Sub(i+1,arr,v,n);
 
     v.pop_back();
-    print_Sub(i,arr,v,n);
+    print_Sub(i+1,arr,v,n);
 
 }
 
